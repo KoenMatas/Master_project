@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.2">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="426" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="year" action="GroupBy" rename="year" />
+            <SummarizeField field="artist" action="GroupBy" rename="artist" />
+            <SummarizeField field="position" action="Median" rename="Median_position" />
+            <SummarizeField field="peak" action="Min" rename="Min_peak" />
+            <SummarizeField field="weeks_on_chart" action="Max" rename="Max_weeks_on_chart" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="222" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="Path">C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>billboardaltered.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="Unnamed: 0" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="Unnamed: 0.1" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="date" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="position" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="title" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="artist" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="position_last_week" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="peak" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="weeks_on_chart" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="year" size="254" source="File: C:\Users\koenm\OneDrive\Bureaublad\Thesis\Metacritic_thesis\grammy\billboardaltered.csv" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="position" selected="True" type="Double" size="8" />
+            <SelectField field="peak" selected="True" type="Double" size="8" />
+            <SelectField field="weeks_on_chart" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="522" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\koenm\AppData\Local\Temp\Engine_7764_1ead17d4f1ec420a8b77e57ae6b703e8_\Engine_17088_25d2baec4953411fa1a68da398bec647_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>averag_per_artist</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="1f3a088f-3a9f-4562-957f-ae49c36d3147" />
+      <Telemetry>
+        <PreviousWorkflowId value="44be85c4-b74a-4f78-b143-e80da5d32e22" />
+        <OriginWorkflowId value="1f3a088f-3a9f-4562-957f-ae49c36d3147" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
